@@ -1,42 +1,52 @@
 <?php
+
 namespace Admincenter\Controller;
+
 use Think\Controller;
-class SysbankController extends CommonController {
-	public function __construct(){
+
+class SysbankController extends CommonController
+{
+	public function __construct()
+	{
 		parent::__construct();
 		$this->_db = D('Sysbank');
 		$this->_pk = $this->_db->getPk();
 	}
-	function manage(){
+	function manage()
+	{
 		parent::_manage();
 		$this->display();
 	}
-	function bankadd(){
-		if(IS_POST){
+	function bankadd()
+	{
+		if (IS_POST) {
 			parent::_adddosimp();
 		}
 		$this->display();
 	}
-	function bankedit(){
+	function bankedit()
+	{
 		$id = I('id');
-		$info = $this->_db->where([$this->_pk=>$id])->find();
-		if(!$info){
+		$info = $this->_db->where([$this->_pk => $id])->find();
+		if (!$info) {
 			$this->error('您修改的数据不存在！');
-		}else{
-			$this->assign('info',$info);	
+		} else {
+			$this->assign('info', $info);
 		}
-		if(IS_POST){
+		if (IS_POST) {
 			parent::_editdosimp();
 		}
 		$this->display('bankadd');
 	}
-	
-	function setstatus(){
+
+	function setstatus()
+	{
 		$name   = I('name');
-		if($name!='state')$this->error('非法操作！');
+		if ($name != 'state') $this->error('非法操作！');
 		parent::_setstatus();
 	}
-	function delete(){
+	function delete()
+	{
 		parent::_deletedosimp();
 		/*$id     = I('id');
 		if(!$id)$this->error('非法操作！');
@@ -45,52 +55,59 @@ class SysbankController extends CommonController {
 		$int = $this->_db->where([$this->_pk=>$id])->delete();
 		$int?$this->success('操作成功！'):$this->error('操作失败！');*/
 	}
-	function deleteall(){
+	function deleteall()
+	{
 		parent::_deletealldo();
 	}
-	function listorder(){
+	function listorder()
+	{
 		parent::_listorder();
 	}
 
 
-	function linebank(){
+	function linebank()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		parent::_manage();
 		$this->display();
 	}
-	function linebankadd(){
+	function linebankadd()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
-		if(IS_POST){
+		if (IS_POST) {
 			parent::_adddosimp();
 		}
 		$this->display();
 	}
-	function linebankedit(){
+	function linebankedit()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		$id = I('id');
-		$info = $this->_db->where([$this->_pk=>$id])->find();
-		if(!$info){
+		$info = $this->_db->where([$this->_pk => $id])->find();
+		if (!$info) {
 			$this->error('您修改的数据不存在！');
-		}else{
-			$this->assign('info',$info);	
+		} else {
+			$this->assign('info', $info);
 		}
-		if(IS_POST){
+		if (IS_POST) {
 			parent::_editdosimp();
 		}
 		$this->display('linebankadd');
 	}
-	
-	function linesetstatus(){
+
+	function linesetstatus()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		$name   = I('name');
-		if($name!='state')$this->error('非法操作！');
+		if ($name != 'state') $this->error('非法操作！');
 		parent::_setstatus();
 	}
-	function linebankdelete(){
+	function linebankdelete()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		parent::_deletedosimp();
@@ -101,15 +118,16 @@ class SysbankController extends CommonController {
 		$int = $this->_db->where([$this->_pk=>$id])->delete();
 		$int?$this->success('操作成功！'):$this->error('操作失败！');*/
 	}
-	function linebankdeleteall(){
+	function linebankdeleteall()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		parent::_deletealldo();
 	}
-	function linebanklistorder(){
+	function linebanklistorder()
+	{
 		$this->_db = D('linebanklist');
 		$this->_pk = $this->_db->getPk();
 		parent::_listorder();
 	}
-
 }

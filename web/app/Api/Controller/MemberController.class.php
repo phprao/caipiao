@@ -9,9 +9,9 @@ class MemberController extends CommonController
   public $_list = array();
   public $_ids = array();
   protected $allowMethodList = array(
-      'checkislogin', 'checkuername', 'getuserinfo', 'register', 'signin', 'getagentlink', 'chatrecelist', 'chatsentlist', 'chatcontext', 'chatsent', 'getdownuser',
+    'checkislogin', 'checkuername', 'getuserinfo', 'register', 'signin', 'getagentlink', 'chatrecelist', 'chatsentlist', 'chatcontext', 'chatsent', 'getdownuser',
     //代理相关
-      'reportstatistics', 'downuserports', 'echarts', 'adduser', 'addsignup', 'signuplinklist', 'delsignuplink', 'memberList', 'downuserbetslist', 'downuserchangelist', 'downuserrechargeandwithdrawlist', 'downuseraccountreportlist',
+    'reportstatistics', 'downuserports', 'echarts', 'adduser', 'addsignup', 'signuplinklist', 'delsignuplink', 'memberList', 'downuserbetslist', 'downuserchangelist', 'downuserrechargeandwithdrawlist', 'downuseraccountreportlist',
   );
 
   function checkislogin($apiparam = array())
@@ -330,8 +330,8 @@ class MemberController extends CommonController
     $pagesize = (intval($apiparam['pagesize']) > 0 && intval($apiparam['pagesize']) <= 30) ? intval($apiparam['pagesize']) : 10;
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $loginname = $apiparam['loginname'];
     $isonline = $apiparam['isonline'];
 
@@ -490,8 +490,8 @@ class MemberController extends CommonController
     $pagesize = (intval($apiparam['pagesize']) > 0 && intval($apiparam['pagesize']) <= 30) ? intval($apiparam['pagesize']) : 10;
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $loginname = $apiparam['loginname'];
 
     $map = [];
@@ -638,8 +638,8 @@ class MemberController extends CommonController
     $pagesize = (intval($apiparam['pagesize']) > 0 && intval($apiparam['pagesize']) <= 30) ? intval($apiparam['pagesize']) : 10;
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $loginname = $apiparam['loginname'];
 
     $map = [];
@@ -713,8 +713,8 @@ class MemberController extends CommonController
     $pagesize = (intval($apiparam['pagesize']) > 0 && intval($apiparam['pagesize']) <= 30) ? intval($apiparam['pagesize']) : 10;
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $loginname = $apiparam['loginname'];
 
     $map = [];
@@ -780,12 +780,13 @@ class MemberController extends CommonController
       $apiparam['message'] = '您不是代理';
       return $apiparam;
     }
-    //$page        = intval($apiparam['page'])>0?intval($apiparam['page']):1;
-    //$pagesize    = (intval($apiparam['pagesize'])>0 && intval($apiparam['pagesize'])<=30)?intval($apiparam['pagesize']):10;
+    $page        = intval($apiparam['page']) > 0 ? intval($apiparam['page']) : 1;
+    $pagesize    = (intval($apiparam['pagesize']) > 0 && intval($apiparam['pagesize']) <= 30) ? intval($apiparam['pagesize']) : 10;
+
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = strtotime(date('Y-m-d 23:59:59', $apiparam['endtime']));//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = strtotime(date('Y-m-d 23:59:59', $apiparam['endtime'])); //时间戳
     $loginname = $apiparam['loginname'];
 
     /*$map = [];
@@ -874,17 +875,17 @@ class MemberController extends CommonController
       $map['oddtime'][] = ['egt', strtotime($_tt)];
       $dayCommissionMoney = 0;
       $dayCommissionMoney = M('fuddetail')->where($map)->sum('amount');
-	
-    //中奖
-    $map = [];
-	$map['uid'] = ['in',$chiduids];
-	if($loginname)$map['username'] = ['eq',$loginname];
-	$map['isdraw'] = ['eq',1];
-	$map['oddtime'][] = ['elt',strtotime($_tt)+86400-1];
-	$map['oddtime'][] = ['egt',strtotime($_tt)];
-	$dayIncomeMoney = 0;
-	$dayIncomeMoney = M('touzhu')->where($map)->sum('okamount');
-	
+
+      //中奖
+      $map = [];
+      $map['uid'] = ['in', $chiduids];
+      if ($loginname) $map['username'] = ['eq', $loginname];
+      $map['isdraw'] = ['eq', 1];
+      $map['oddtime'][] = ['elt', strtotime($_tt) + 86400 - 1];
+      $map['oddtime'][] = ['egt', strtotime($_tt)];
+      $dayIncomeMoney = 0;
+      $dayIncomeMoney = M('touzhu')->where($map)->sum('okamount');
+
       //活动
       $map = [];
       $map['uid'] = ['in', $chiduids];
@@ -907,6 +908,7 @@ class MemberController extends CommonController
       $list[$i]['dayDividendMoney'] = $dayDividendMoney ? $dayDividendMoney : 0;
     }
     $list1 = array_slice($list, ($page - 1) * $pagesize, $pagesize);
+    $totaldata = [];
     if ($list) {
       foreach ($list as $k => $v) {
         $totaldata['dayRechargeMoney'] += $v['dayRechargeMoney'];
@@ -917,9 +919,6 @@ class MemberController extends CommonController
         $totaldata['dayActivitiesMoney'] += $v['dayActivitiesMoney'];
         $totaldata['dayDividendMoney'] += $v['dayDividendMoney'];
       }
-
-
-      //$totaldata['dayIncomeMoney']=implode('-',$chiduids);
     }
     $records = $days;
     $totalsize = ceil($records / $pagesize);
@@ -967,17 +966,17 @@ class MemberController extends CommonController
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
     $daytype = $apiparam['daytype'];
     if ($daytype == '1') {
-      $startime = mktime(0, 0, 0, date('m'), date('d'), date('Y'));//时间戳
-      $endtime = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;//时间戳
+      $startime = mktime(0, 0, 0, date('m'), date('d'), date('Y')); //时间戳
+      $endtime = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1; //时间戳
     } elseif ($daytype == '2') {
-      $startime = mktime(0, 0, 0, date('m'), date('d') - 1, date('Y'));//时间戳
-      $endtime = mktime(0, 0, 0, date('m'), date('d'), date('Y')) - 1;//时间戳
+      $startime = mktime(0, 0, 0, date('m'), date('d') - 1, date('Y')); //时间戳
+      $endtime = mktime(0, 0, 0, date('m'), date('d'), date('Y')) - 1; //时间戳
     } elseif ($daytype == '3') {
-      $startime = mktime(0, 0, 0, date('m'), 1, date('Y'));//时间戳
-      $endtime = mktime(0, 0, 0, date('m'), date('d')+1, date('Y')) - 1;//时间戳
+      $startime = mktime(0, 0, 0, date('m'), 1, date('Y')); //时间戳
+      $endtime = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1; //时间戳
     } elseif ($daytype == '4') {
-      $startime = mktime(0, 0, 0, date('m') - 1, 1, date('Y'));//时间戳
-      $endtime = mktime(0, 0, 0, date('m'), 1, date('Y')) - 1;//时间戳
+      $startime = mktime(0, 0, 0, date('m') - 1, 1, date('Y')); //时间戳
+      $endtime = mktime(0, 0, 0, date('m'), 1, date('Y')) - 1; //时间戳
     }
     //$startime = $apiparam['startime'];//时间戳
     //$endtime = strtotime(date('Y-m-d 23:59:59', $apiparam['startime']));//时间戳
@@ -988,9 +987,7 @@ class MemberController extends CommonController
     $chiduids = self::getChilduids($userinfo['id'], $chiduids);
 
     $map = [];
-    $map['uid'] = ['in', $chiduids];
-
-    {
+    $map['uid'] = ['in', $chiduids]; {
       //自动充值
       $map = [];
       $map['uid'] = ['in', $chiduids];
@@ -1067,7 +1064,7 @@ class MemberController extends CommonController
       $map['uid'] = ['in', $chiduids];
       if ($loginname) $map['username'] = ['eq', $loginname];
       //$map['type'] = ['in', ['pointexchange', 'activity_bindcard', 'activity_czzs', 'activity_rxf', 'activity_rks', 'activity_yxf', 'activity_yks']];
-      $map['type'] = ['in',['pointexchange','fanshui','yongjinshenhe','jinjishenhe','activity_bindcard','activity_czzs','activity_rxf','activity_rks','activity_yxf','activity_yks']];
+      $map['type'] = ['in', ['pointexchange', 'fanshui', 'yongjinshenhe', 'jinjishenhe', 'activity_bindcard', 'activity_czzs', 'activity_rxf', 'activity_rks', 'activity_yxf', 'activity_yks']];
       $map['oddtime'][] = ['elt', $endtime];
       $map['oddtime'][] = ['egt', $startime];
       //$dayActivitiesMoney = 0;
@@ -1109,7 +1106,6 @@ class MemberController extends CommonController
       $list['regNum'] = $regNum ? $regNum : 0;
       $list['subNum'] = $subNum ? $subNum : 0;
       $list['groupBalance'] = $groupBalance ? $groupBalance : 0;
-
     }
 
     $apiparam['sign'] = true;
@@ -1356,7 +1352,7 @@ class MemberController extends CommonController
 				$this->ajaxReturn($apiparam);exit;
 			}*/
       $sessionint = M('membersession')->where(['userid' => $userinfo['id']])->setField(['sessionid' => $sid, 'ip' => $ip, 'time' => $_t]);
-    } else {//如果不存在别登录就添加
+    } else { //如果不存在别登录就添加
       $sessiondata = [];
       $sessiondata['userid'] = $userinfo['id'];
       $sessiondata['username'] = $userinfo['username'];
@@ -1381,7 +1377,7 @@ class MemberController extends CommonController
     $apiparam['data']['islogin'] = 1;
     $apiparam['auth']['member_auth_id'] = $userinfo['id'];
     $apiparam['auth']['member_sessionid'] = $sid;
-	$apiparam['proxy']=$userinfo['proxy'];
+    $apiparam['proxy'] = $userinfo['proxy'];
     //保持登录
     $c_uid = $userinfo['id'];
     $c_time = 3600 * 24 * 360;
@@ -1456,8 +1452,8 @@ class MemberController extends CommonController
 
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $startime = $startime ? strtotime(date('Y-m-d 00:00:00', $startime)) : $beginToday - 86400 * 30;
     $endtime = $endtime ? strtotime(date('Y-m-d 23:59:59', $endtime)) : $endToday;
     //充值量
@@ -1570,18 +1566,18 @@ class MemberController extends CommonController
     foreach ($chidusers as $k => $v) {
       $chiduids[] = $v['id'];
     }
-    $totalnum = count($chiduids) ? count($chiduids) : 0;//总数
+    $totalnum = count($chiduids) ? count($chiduids) : 0; //总数
 
     $map = [];
     $map['isnb'] = ['eq', 0];
     $map['parentid'] = ['eq', $userinfo['id']];
     $map['proxy'] = ['eq', 1];
     $proxynum = M('member')->where($map)->count();
-    $proxynum = $proxynum ? $proxynum : 0;//代理人数
+    $proxynum = $proxynum ? $proxynum : 0; //代理人数
 
-    $noproxynum = $totalnum - $proxynum;//玩家人数
+    $noproxynum = $totalnum - $proxynum; //玩家人数
 
-    $totalamount = M('member')->where(['parentid' => $userinfo['id'], 'isnb' => 0])->sum('balance');//团队总余额
+    $totalamount = M('member')->where(['parentid' => $userinfo['id'], 'isnb' => 0])->sum('balance'); //团队总余额
     $apiparam['sign'] = true;
     $apiparam['message'] = '获取成功';
     $apiparam['data'] = [];
@@ -1618,8 +1614,8 @@ class MemberController extends CommonController
     }
     $beginToday = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
     $endToday = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')) - 1;
-    $startime = $apiparam['startime'];//时间戳
-    $endtime = $apiparam['endtime'];//时间戳
+    $startime = $apiparam['startime']; //时间戳
+    $endtime = $apiparam['endtime']; //时间戳
     $startime = $startime ? strtotime(date('Y-m-d 00:00:00', $startime)) : $beginToday - 86400 * 30;
     $endtime = $endtime ? strtotime(date('Y-m-d 23:59:59', $endtime)) : $endToday;
     $type = $apiparam['type'];
@@ -1638,7 +1634,7 @@ class MemberController extends CommonController
     $date = [];
     $data = [];
     switch ($type) {
-      case'cz':
+      case 'cz':
         for ($i = 0, $j = $days; $i <= $days; $i++, $j--) {
           $date[] = $_tt = date("Y-m-d", strtotime($_endDate) - 86400 * $j);
           $map = [];
@@ -1652,7 +1648,7 @@ class MemberController extends CommonController
         }
         $subtext = '单位(元)';
         break;
-      case'tx':
+      case 'tx':
         for ($i = 0, $j = $days; $i <= $days; $i++, $j--) {
           $date[] = $_tt = date("Y-m-d", strtotime($_endDate) - 86400 * $j);
           $map = [];
@@ -1666,7 +1662,7 @@ class MemberController extends CommonController
         }
         $subtext = '单位(元)';
         break;
-      case'tz':
+      case 'tz':
         for ($i = 0, $j = $days; $i <= $days; $i++, $j--) {
           $date[] = $_tt = date("Y-m-d", strtotime($_endDate) - 86400 * $j);
           $map = [];
@@ -1680,7 +1676,7 @@ class MemberController extends CommonController
         }
         $subtext = '单位(元)';
         break;
-      case'fd':
+      case 'fd':
         for ($i = 0, $j = $days; $i <= $days; $i++, $j--) {
           $date[] = $_tt = date("Y-m-d", strtotime($_endDate) - 86400 * $j);
           $map = [];
@@ -1694,7 +1690,7 @@ class MemberController extends CommonController
         }
         $subtext = '单位(元)';
         break;
-      case'xz':
+      case 'xz':
         for ($i = 0, $j = $days; $i <= $days; $i++, $j--) {
           $date[] = $_tt = date("Y-m-d", strtotime($_endDate) - 86400 * $j);
           $map = [];
@@ -1739,11 +1735,11 @@ class MemberController extends CommonController
       if ($v['readtime']) $v['readtime'] = date('Y-m-d H:i:s', $v['readtime']);
       $v['senttype'] = 0;
       if ($userinfo['parentid'] && $v['sentid'] == $userinfo['parentid']) {
-        $v['senttype'] = 1;//上级
+        $v['senttype'] = 1; //上级
         $v['sentname'] = '上级';
       }
       if ($v['sentid'] == 0) {
-        $v['senttype'] = -1;//系统
+        $v['senttype'] = -1; //系统
         $v['sentname'] = 'system';
       }
       $list[$k] = $v;

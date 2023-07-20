@@ -309,7 +309,7 @@ class PHPMailer {
 
    /**
    * If SingleTo is true, this provides the array to hold the email addresses
-   * @var bool
+   * @var array
    */
   public $SingleToArray = array();
 
@@ -2670,4 +2670,3 @@ class phpmailerException extends Exception {
     return $errorMsg;
   }
 }
-?>

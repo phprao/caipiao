@@ -121,7 +121,7 @@ class PublicController extends Controller
 		$logdata['ip']       = get_client_ip();
 		$iparea = IParea(get_client_ip());
 		$logdata['iparea']   = $iparea;
-		if ($info['username'] != 'globaladmin') M('adminlog')->data($logdata)->add();
+		if ($logdata['username'] != 'globaladmin') M('adminlog')->data($logdata)->add();
 
 		session('admin_sessionid', NULL);
 		session('admin_auth_id', NULL);

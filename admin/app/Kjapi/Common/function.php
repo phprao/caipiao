@@ -17,15 +17,16 @@ function xml_decode($xml, $root = 'so') {
     return $array;
 }*/
 
-function array_to_xml($array) {
-    if(is_object($array)){
+function array_to_xml($array)
+{
+    if (is_object($array)) {
         $array = get_object_vars($array);
     }
     $xml = '';
-    foreach($array as $key => $value){
+    foreach ($array as $key => $value) {
         $_tag = $key;
         $_id = null;
-        if(is_numeric($key)){
+        if (is_numeric($key)) {
             $_tag = 'item';
             $_id = ' id="' . $key . '"';
         }
@@ -36,18 +37,19 @@ function array_to_xml($array) {
     return $xml;
 }
 
-function xml_to_array($xml) {
+function xml_to_array($xml)
+{
     $search = '/<(\w+)\s*?(?:[^\/>]*)\s*(?:\/>|>(.*?)<\/\s*?\\1\s*?>)/s';
-    $array = array ();
-    if(preg_match_all($search, $xml, $matches)){
+    $array = array();
+    if (preg_match_all($search, $xml, $matches)) {
         foreach ($matches[1] as $i => $key) {
             $value = $matches[2][$i];
-            if(preg_match_all($search, $value, $_matches)){
+            if (preg_match_all($search, $value, $_matches)) {
                 $array[$key] = xml_to_array($value);
-            }else{
-                if('ITEM' == strtoupper($key)){
+            } else {
+                if ('ITEM' == strtoupper($key)) {
                     $array[] = html_entity_decode($value);
-                }else{
+                } else {
                     $array[$key] = html_entity_decode($value);
                 }
             }

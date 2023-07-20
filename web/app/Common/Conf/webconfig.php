@@ -1,8 +1,8 @@
 <?php
  return array (
-  'webtitle' => '顺发网',
-  'keywords' => '顺发网',
-  'description' => '顺发网',
+  'webtitle' => '彩球',
+  'keywords' => '彩球',
+  'description' => '彩球',
   'iskillorder' => '1',
   'sysBankMaxNum' => '5',
   'tikuanMin' => '100',
@@ -21,8 +21,8 @@
   'pointtouzhuadd' => '1',
   'pointhuisun' => '1',
   'pointhuisunadd' => '1',
-  'kefuthree' => 'https://www.090010.com/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=43&groupid=0&special=45',
-  'bindcardamount' => '0',
+  'kefuthree' => '彩球',
+  'bindcardamount' => '100',
   'newmemberrecharge' => '1000',
   'newmemberrechargeamount' => '0',
   'activity_cz0_money' => '100~1000',
@@ -79,8 +79,8 @@
   'ipwhiteisopen' => '0',
   'ipwhitelist' => '',
   'pointexchangeamount' => '1000',
-  'kefuqq' => '待添加',
-  'defaulttjcode' => '9133',
+  'kefuqq' => '彩球',
+  'defaulttjcode' => '9088',
   'agent_commission_open' => '1',
   'bancountry' => '[]',
   'fuddetailtypes' => 
@@ -156,10 +156,11 @@
 <span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">2：跳转出二维码，然后长按二维码保存或截屏起来</span><br />
 <span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">3：进入自己支付宝的扫一扫，右上角点击下相册，选择扫描刚刚保存的二维码</span><br />
 <p>
-	<span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">4：手机点击下立即支付，支付成功后刷新下网页立即到账哦。</span>
+	<span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">4：手机点击下立即支付，支付成功后刷新下网页立即到账哦。</span> 
 </p>
 <p>
-	<br />
+	<span style="color:#F46E00;font-family:" background-color:#fffdeb;"=""><span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">5：</span><span style="color:#F46E00;font-family:" background-color:#fffdeb;"="">搭建QQ1329807895</span><br />
+</span> 
 </p>',
       'configs' => 
       array (
@@ -194,6 +195,9 @@
 </p>
 <p>
 	4、转帐完成后请保留单据作为核对证明。
+</p>
+<p>
+	<span style="color:#F46E00;font-family:" background-color:#fffdeb;"=""><span background-color:#fffdeb;"="" style="color: rgb(244, 110, 0); white-space: normal;">5：</span><span background-color:#fffdeb;"="" style="color: rgb(244, 110, 0); white-space: normal;">搭建QQ1329807895</span></span><span style="color:#F46E00;font-family:" background-color:#fffdeb;"=""></span> 
 </p>',
       'configs' => 
       array (
@@ -214,7 +218,7 @@
       'ftitle' => '',
       'minmoney' => '1.00',
       'maxmoney' => '1000.00',
-      'remark' => '',
+      'remark' => '禁止非法运营&nbsp;1329807895',
       'configs' => 
       array (
         'bankname' => '10',
@@ -231,6 +235,27 @@
   array (
     'k3' => 
     array (
+      'bjk3' => 
+      array (
+        'id' => '16',
+        'typeid' => 'k3',
+        'title' => '北京快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:10:40',
+        'endtime' => '23:50:40',
+        'qishu' => '89',
+        'name' => 'bjk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '5',
+        'listorder' => '0',
+      ),
       'f1k3' => 
       array (
         'id' => '91',
@@ -252,12 +277,54 @@
         'allsort' => '3',
         'listorder' => '1',
       ),
+      'jsk3' => 
+      array (
+        'id' => '17',
+        'typeid' => 'k3',
+        'title' => '江苏快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '08:40:00',
+        'endtime' => '22:10:00',
+        'qishu' => '82',
+        'name' => 'jsk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '6',
+        'listorder' => '1',
+      ),
+      'jlk3' => 
+      array (
+        'id' => '93',
+        'typeid' => 'k3',
+        'title' => '吉林快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '08:30:00',
+        'endtime' => '21:31:30',
+        'qishu' => '87',
+        'name' => 'jlk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '8',
+        'listorder' => '2',
+      ),
       'hubk3' => 
       array (
         'id' => '18',
         'typeid' => 'k3',
         'title' => '湖北快3',
-        'ftitle' => '20分钟1期',
+        'ftitle' => '后台更改描述',
         'firsttime' => '09:10:00',
         'endtime' => '22:00:00',
         'qishu' => '78',
@@ -272,6 +339,90 @@
         'is_old' => '0',
         'allsort' => '999',
         'listorder' => '4',
+      ),
+      'hebk3' => 
+      array (
+        'id' => '53',
+        'typeid' => 'k3',
+        'title' => '河北快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '8:30:00',
+        'endtime' => '22:00:00',
+        'qishu' => '81',
+        'name' => 'hebk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '5',
+      ),
+      'shk3' => 
+      array (
+        'id' => '21',
+        'typeid' => 'k3',
+        'title' => '上海快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '08:58:00',
+        'endtime' => '22:28:00',
+        'qishu' => '82',
+        'name' => 'shk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '6',
+      ),
+      'jxk3' => 
+      array (
+        'id' => '84',
+        'typeid' => 'k3',
+        'title' => '江西快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:04:00',
+        'endtime' => '22:54:00',
+        'qishu' => '84',
+        'name' => 'jxk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '8',
+      ),
+      'gxk3' => 
+      array (
+        'id' => '19',
+        'typeid' => 'k3',
+        'title' => '广西快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:37:30',
+        'endtime' => '22:27:30',
+        'qishu' => '78',
+        'name' => 'gxk3',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '9',
       ),
       'f5k3' => 
       array (
@@ -294,54 +445,72 @@
         'allsort' => '7',
         'listorder' => '10',
       ),
-    ),
-    'ssc' => 
-    array (
-      'dfssc' => 
+      'ahk3' => 
       array (
-        'id' => '97',
-        'typeid' => 'ssc',
-        'title' => '极速时时彩',
-        'ftitle' => '1分钟1期',
-        'firsttime' => '10:00:00',
-        'endtime' => '23:59:00',
-        'qishu' => '0',
-        'name' => 'dfssc',
-        'ftime' => '10',
+        'id' => '20',
+        'typeid' => 'k3',
+        'title' => '安徽快3',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '08:50:00',
+        'endtime' => '22:00:00',
+        'qishu' => '80',
+        'name' => 'ahk3',
+        'ftime' => '120',
         'isopen' => '1',
-        'issys' => '1',
+        'issys' => '0',
         'closetime1' => '00:00:00',
-        'closetime2' => '23:30:00',
-        'expecttime' => '1',
+        'closetime2' => '00:00:00',
+        'expecttime' => '0',
         'iswh' => '0',
-        'is_old' => '1',
-        'allsort' => '99',
-        'listorder' => '4',
-      ),
-      'amssc' => 
-      array (
-        'id' => '120',
-        'typeid' => 'ssc',
-        'title' => '澳门时时彩',
-        'ftitle' => '5分钟一期',
-        'firsttime' => NULL,
-        'endtime' => NULL,
-        'qishu' => '288',
-        'name' => 'amssc',
-        'ftime' => '30',
-        'isopen' => '1',
-        'issys' => '1',
-        'closetime1' => '00:00:01',
-        'closetime2' => '23:59:59',
-        'expecttime' => '5',
-        'iswh' => '0',
-        'is_old' => '1',
-        'allsort' => '0',
-        'listorder' => '120',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '11',
       ),
     ),
     'dpc' => 
     array (
+      'fc3d' => 
+      array (
+        'id' => '108',
+        'typeid' => 'dpc',
+        'title' => '福彩3D',
+        'ftitle' => '全天一期',
+        'firsttime' => '21:15:00',
+        'endtime' => '21:15:00',
+        'qishu' => '1',
+        'name' => 'fc3d',
+        'ftime' => '600',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '13',
+        'listorder' => '1',
+      ),
+      'pl3' => 
+      array (
+        'id' => '109',
+        'typeid' => 'dpc',
+        'title' => '排列三',
+        'ftitle' => '全天一期',
+        'firsttime' => '20:30:00',
+        'endtime' => '20:30:00',
+        'qishu' => '1',
+        'name' => 'pl3',
+        'ftime' => '600',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '2',
+      ),
       'df3d' => 
       array (
         'id' => '111',
@@ -366,6 +535,69 @@
     ),
     'x5' => 
     array (
+      'gd11x5' => 
+      array (
+        'id' => '104',
+        'typeid' => 'x5',
+        'title' => '广东11选5',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:11:00',
+        'endtime' => '23:01:00',
+        'qishu' => '84',
+        'name' => 'gd11x5',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '1',
+      ),
+      'sh11x5' => 
+      array (
+        'id' => '105',
+        'typeid' => 'x5',
+        'title' => '上海11选5',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '08:59:00',
+        'endtime' => '23:49:00',
+        'qishu' => '90',
+        'name' => 'sh11x5',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '999',
+        'listorder' => '2',
+      ),
+      'jx11x5' => 
+      array (
+        'id' => '107',
+        'typeid' => 'x5',
+        'title' => '江西11选5',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:10:00',
+        'endtime' => ' 23:00:0',
+        'qishu' => '84',
+        'name' => 'jx11x5',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '11',
+        'listorder' => '4',
+      ),
       'df11x5' => 
       array (
         'id' => '112',
@@ -390,6 +622,27 @@
     ),
     'keno' => 
     array (
+      'bjkeno' => 
+      array (
+        'id' => '103',
+        'typeid' => 'keno',
+        'title' => '北京快乐8',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:05:05',
+        'endtime' => '23:55:05',
+        'qishu' => '179',
+        'name' => 'bjkeno',
+        'ftime' => '60',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '10',
+        'listorder' => '1',
+      ),
       'dfkeno' => 
       array (
         'id' => '113',
@@ -414,6 +667,27 @@
     ),
     'pk10' => 
     array (
+      'bjpk10' => 
+      array (
+        'id' => '102',
+        'typeid' => 'pk10',
+        'title' => '北京PK10',
+        'ftitle' => '全天44期',
+        'firsttime' => '09:06:00',
+        'endtime' => '23:56:00',
+        'qishu' => '179',
+        'name' => 'bjpk10',
+        'ftime' => '60',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '1',
+        'listorder' => '1',
+      ),
       'dfpk10' => 
       array (
         'id' => '114',
@@ -434,6 +708,27 @@
         'is_old' => '1',
         'allsort' => '2',
         'listorder' => '114',
+      ),
+      'xyft' => 
+      array (
+        'id' => '121',
+        'typeid' => 'pk10',
+        'title' => '幸运飞艇',
+        'ftitle' => '5分钟1期',
+        'firsttime' => NULL,
+        'endtime' => NULL,
+        'qishu' => '180',
+        'name' => 'xyft',
+        'ftime' => '30',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '0',
+        'listorder' => '121',
       ),
       'jsft' => 
       array (
@@ -457,8 +752,158 @@
         'listorder' => '122',
       ),
     ),
+    'ssc' => 
+    array (
+      'cqssc' => 
+      array (
+        'id' => '100',
+        'typeid' => 'ssc',
+        'title' => '重庆时时彩',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '10:00:00',
+        'endtime' => '2:00:00',
+        'qishu' => '120',
+        'name' => 'cqssc',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '0',
+        'listorder' => '1',
+      ),
+      'xjssc' => 
+      array (
+        'id' => '99',
+        'typeid' => 'ssc',
+        'title' => '新疆时时彩',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '10:10:34',
+        'endtime' => '02:00:34',
+        'qishu' => '96',
+        'name' => 'xjssc',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '999',
+        'listorder' => '2',
+      ),
+      'tjssc' => 
+      array (
+        'id' => '98',
+        'typeid' => 'ssc',
+        'title' => '天津时时彩',
+        'ftitle' => '后台更改描述',
+        'firsttime' => '09:09:36',
+        'endtime' => '22:59:36',
+        'qishu' => '84',
+        'name' => 'tjssc',
+        'ftime' => '120',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '999',
+        'listorder' => '3',
+      ),
+      'dfssc' => 
+      array (
+        'id' => '97',
+        'typeid' => 'ssc',
+        'title' => '极速时时彩',
+        'ftitle' => '1分钟1期',
+        'firsttime' => '10:00:00',
+        'endtime' => '23:59:00',
+        'qishu' => '0',
+        'name' => 'dfssc',
+        'ftime' => '10',
+        'isopen' => '1',
+        'issys' => '1',
+        'closetime1' => '00:00:00',
+        'closetime2' => '23:30:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '99',
+        'listorder' => '4',
+      ),
+      'txssc' => 
+      array (
+        'id' => '119',
+        'typeid' => 'ssc',
+        'title' => '腾讯分分彩',
+        'ftitle' => '1分钟1期',
+        'firsttime' => NULL,
+        'endtime' => NULL,
+        'qishu' => '1440',
+        'name' => 'txssc',
+        'ftime' => '10',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '23:59:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '99',
+        'listorder' => '118',
+      ),
+      'amssc' => 
+      array (
+        'id' => '120',
+        'typeid' => 'ssc',
+        'title' => '澳门时时彩',
+        'ftitle' => '5分钟一期',
+        'firsttime' => NULL,
+        'endtime' => NULL,
+        'qishu' => '288',
+        'name' => 'amssc',
+        'ftime' => '30',
+        'isopen' => '1',
+        'issys' => '1',
+        'closetime1' => '00:00:01',
+        'closetime2' => '23:59:59',
+        'expecttime' => '5',
+        'iswh' => '0',
+        'is_old' => '1',
+        'allsort' => '0',
+        'listorder' => '120',
+      ),
+    ),
     'lhc' => 
     array (
+      'lhc' => 
+      array (
+        'id' => '116',
+        'typeid' => 'lhc',
+        'title' => '香港六合彩',
+        'ftitle' => '每周三期',
+        'firsttime' => NULL,
+        'endtime' => NULL,
+        'qishu' => '0',
+        'name' => 'lhc',
+        'ftime' => '300',
+        'isopen' => '1',
+        'issys' => '0',
+        'closetime1' => '00:00:00',
+        'closetime2' => '00:00:00',
+        'expecttime' => '1',
+        'iswh' => '0',
+        'is_old' => '0',
+        'allsort' => '4',
+        'listorder' => '115',
+      ),
       'dflhc' => 
       array (
         'id' => '117',
@@ -488,7 +933,7 @@
     array (
       'id' => '5',
       'title' => '最新公告~大众彩民注意事项~！',
-      'content' => '待添加',
+      'content' => '禁止非法用途:1329807895',
       'oddtime' => '1502347527',
     ),
     2 => 
@@ -500,7 +945,10 @@
 	<span style="font-size:16px;"> </span> 
 </p>
 <p class="MsoNormal">
-	<span>待添加</span>
+	<span><span>668源码网整理禁止非法用途:668yuanma.com</span></span>
+</p>
+<p class="MsoNormal">
+	<span><span>QQ3300671255</span></span>
 </p>
 <p class="MsoNormal">
 	<span></span><span></span><span></span> 
@@ -2477,7 +2925,7 @@
       'rifanyonglv' => '0',
       'yuefanyonglv' => '',
       'jjje' => '38888',
-      'tiaoji' => '0',
+      'tiaoji' => '47856',
       'configs' => '',
       'level' => '0',
       'min_k3ethfx' => 0,

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="__CSS2__/header.css">
     <link rel="stylesheet" href="__CSS2__/main.css">
     <link rel="stylesheet" href="__CSS2__/footer.css">
+
 </head>
 
 <body>
@@ -40,39 +41,38 @@
                                 <switch name="cp.typeid">
                                     <case value="k3">
                                         <a href="__ROOT__/Game.k3?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="iconfont">&#xe607;</i>
+                                            <i class="iconfont">&#xe607;</i>
                                     </case>
                                     <case value="lhc">
                                         <a href="__ROOT__/Game.lhc?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="iconfont" style="color:#07b39e">&#xe65a;</i>
+                                            <i class="iconfont" style="color:#07b39e">&#xe65a;</i>
                                     </case>
-                                    <case value="ssc"> 
-                                        <a href="__ROOT__/Game.ssc?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="iconfont special ">&#xe657;</i>
+                                    <case value="ssc"> <a href="__ROOT__/Game.ssc?code={$cp[name]}" title="{$cp[ftitle]}">
+                                            <i class="iconfont special ">&#xe657;</i>
                                     </case>
                                     <case value="pk10">
                                         <a href="__ROOT__/Game.pk10?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="icon--pk iconfont " style="color:#f22751"></i>
+                                            <i class="icon--pk iconfont " style="color:#f22751"></i>
                                     </case>
                                     <case value="keno">
                                         <a href="__ROOT__/Game.keno?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="icon-kuaile8 iconfont " style="color:#fc5826"></i>
+                                            <i class="icon-kuaile8 iconfont " style="color:#fc5826"></i>
                                     </case>
                                     <case value="x5">
                                         <a href="__ROOT__/Game.x5?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="icon-11xuan5 iconfont " style="color:#218ddd"></i>
+                                            <i class="icon-11xuan5 iconfont " style="color:#218ddd"></i>
                                     </case>
                                     <case value="dpc">
                                         <a href="__ROOT__/Game.dpc?code={$cp[name]}" title="{$cp[ftitle]}">
-                                        <i class="<?php if (strstr($cp['name'], '3d')) {
+                                            <i class="<?php if (strstr($cp['name'], '3d')) {
                                                             echo 'icon-fucai3d fc3d_c';
                                                         } else {
                                                             echo ' icon-pailie3 pl3_c';
                                                         } ?>  iconfont " style="color:<?php if (strstr($cp['name'], '3d')) {
-                                                                                            echo '#00b7ee';
-                                                                                        } else {
-                                                                                            echo '#38b366';
-                                                                                        } ?>"></i>
+                                                                                                                                                                                        echo '#00b7ee';
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo '#38b366';
+                                                                                                                                                                                    } ?>"></i>
                                     </case>
                                 </switch>
                                 <em>{$cp[title]}</em>
@@ -108,7 +108,22 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <!--                    <div class="middle_swiper">
+                                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="100">
+                                            <ol class="carousel-indicators">
+                                                <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <a href=""><img src="img/banner1.png" alt=""></a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href=""><img src="img/banner2.png" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
                     <div class="middle_tab main_common_bor">
                         <div class="tab_menu">
                             <ul class="tab_menu_box row margin_0">
@@ -191,6 +206,48 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--                <div class="middle_tab main_common_bor">
+                    <div class="tab_menu">
+                        <ul class="tab_menu_box row margin_0">
+                            <assign name="i" value='0' />
+                            <volist name="bncaipiao" id="value" key="key" offset="0" length='3'>
+                                <li class=" <eq name='i' value='0'> active </eq> col-xs-2">{$value['title']}</li>
+                                <?php /*$i++;*/ ?>
+                            </volist>
+                        </ul>
+                        <div class="tab_menu_content">
+                            <ul class="tab_content_box">
+                                <assign name="j" value='0' />
+                                <volist name="bncaipiao" id="value" key="key" offset="0" length='3'>
+                                    <li style="display: <eq name='j' value='0'>block<else />none</eq>;">
+                                        <div class="sum">
+                                            <span class="sum{$value[opencode]|implode=',',###|substr=0,1}"></span>
+                                            <i>+</i>
+                                            <span class="sum{$value[opencode]|implode=',',###|substr=2,1}"></span>
+                                            <i>+</i>
+                                            <span class="sum{$value[opencode]|implode=',',###|substr=4,1}"></span>
+                                            <i>=</i>
+                                            <em>{$value[opencode]|array_sum}</em>
+                                        </div>
+                                        <p class="words">
+                                            <span>当前期：第<em>{$value['expect']}</em>期</span>
+                                            <span>开奖号码：第<em>{$value[opencode]|implode=',',###}</em></span>
+                                            <span>和值：<em>{$value[opencode]|array_sum}</em></span>
+											<span>形态：
+												<a href="javascript:void(0);">{$value['daxiao']}</a>
+												<a href="javascript:void(0);">{$value['danshuang']}</a>
+											</span>
+                                        </p>
+                                    </li>
+                                    <?php /*$j++;*/ ?>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                -->
+
                 </div>
 
                 <div class="col-xs-3 main_right padding_0">
@@ -213,6 +270,8 @@
                                 用户注册
                             </a>
                         </if>
+
+
                     </div>
                     <div class="ranking main_common_bor">
                         <div class="title">
@@ -221,96 +280,94 @@
                         <ul class="ranking_list sum_icon">
                             <volist name="list" offset="0" length="3" id="value" key="k">
                                 <li data-html="true" class="user_header" data-container="body" data-toggle="popover" data-placement="left" data-content='
-                                    <div class="ceng">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="__ROOT__{$value.face}" alt="" class="media-boject img-circle">
-                                                <p><?php echo str_replace_cn($value['username'], 1, 3); ?></p>
-                                            </div>
-                                            <div class="media-body">
-                                                <p class="margin_0">账号：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
-                                                <p class="margin_0">等级：<span>{$value.groupname}</span></p>
-                                                <p class="margin_0">头衔：<span>{$value.touhan}</span></p>
-                                                <p class="margin_0">累积中奖：<span>{$value.okamountcount}</span></p>
-                                            </div>
-                                            <div class="media-footer">
-                                                <volist name="value.k3names" offset="0" length="6" id="val">
-                                                    <a href="{:U('Game/k3')}?code={$val.name}" class="color_res"><span style="color:#333;display: block;margin-top:4px;">{$val.title|substr=0,6}</span><i class="iconfont">&#xe607;</i></a>
-                                                </volist>
-                                            </div>
-                                        </div>
-                                    </div>'>
-                                    <div class="media clearfix">
-                                        <div class="media-left">
-                                            <img src="__ROOT__{$value['face']}" alt="" class="media-boject img-circle">
-                                        </div>
-                                        <div class="media-body">
-                                            <p class="margin_0">账号昵称：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
-                                            <p class="margin_0">昨日奖金：<em>￥{$value['amountcount']}</em></p>
-                                        </div>
-
-                                        <switch name="k">
-                                            <case value="1">
-                                                <span class="backs_red">1</span>
-                                            </case>
-                                            <case value="2">
-                                                <span class="backs_blue">2</span>
-                                            </case>
-                                            <case value="3">
-                                                <span class="backs_yellow">3</span>
-                                            </case>
-                                            <default />
-                                            <i class="am-fr winners_num">{$key}</i>
-                                        </switch>
-                                    </div>
-                                </li>
-                            </volist>
-                        </ul>
+                        <div class="ceng"><div class="media"><div class="media-left">
+                        <img src="__ROOT__{$value[' face']}" alt="" class="media-boject img-circle">
+                                    <p><?php echo str_replace_cn($value['username'], 1, 3); ?></p>
                     </div>
-                    <div class="ranking main_common_bor winning" style=" <empty name='userinfo'> height:204px  !important; <else /> height:150px !important; </empty> ">
-                        <div class="title">
-                            <h3 class="margin_0">中奖信息</h3>
-                        </div>
-                        <div class="ranking_scrooll_box" style="<empty name='userinfo'> height:172px  !important; <else /> height:115px !important; </empty>">
-                            <ul class="ranking_list ranking_scroll">
-                                <volist name="list2" id="value">
-                                    <li data-html="true" class="user_header" data-container="body" data-toggle="popover" data-placement="left" data-content='
-                                        <div class="ceng">
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <img src="__ROOT__{$value.face}" alt="" class="media-boject img-circle">
-                                                    <p><?php echo str_replace_cn($value['username'], 1, 3); ?></p>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p class="margin_0">账号：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
-                                                    <p class="margin_0">等级：<span>{$value.groupname}</span></p>
-                                                    <p class="margin_0">头衔：<span>{$value.touhan}</span></p>
-                                                    <p class="margin_0">累积中奖：<span>{$value.okamountcount}</span></p>
-                                                </div>
-                                                <div class="media-footer">
-                                                    <volist name="value.k3names" offset="0" length="7" id="val">
-                                                        <a href="{:U(' Game/k3')}?code={$val.name}" class="color_res"><span style="color:#333;display: block;margin-top:4px;">{$val.title|substr=0,6}</span><i class="iconfont">&#xe607;</i></a>
-                                                        </volist>
-                                                </div>
-                                            </div>
-                                        </div>'>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="__ROOT__{$value['face']}" alt="" class="media-boject img-circle">
-                                            </div>
-                                            <div class="media-body">
-                                                <p class="margin_0"><?php echo str_replace_cn($value['username'], 1, 3); ?> <span>在{$value['k3name']}</span></p>
-                                                <p class="margin_0">喜中 <em>￥{$value['okamount']}</em></p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </volist>
-                            </ul>
-                        </div>
+                    <div class="media-body">
+                        <p class="margin_0">账号：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
+                        <p class="margin_0">等级：<span>{$value['groupname']}</span></p>
+                        <p class="margin_0">头衔：<span>{$value['touhan']}</span></p>
+                        <p class="margin_0">累积中奖：<span>{$value['okamountcount']}</span></p>
+                    </div>
+                    <div class="media-footer">
+                        <volist name="value['k3names']" offset="0" length="6" id="val">
+                            <a href="{:U('Game/k3')}?code={$val[name]}" class="color_res"><span style="color:#333;display: block;margin-top:4px;">{$val.title|substr=0,6}</span><i class="iconfont">&#xe607;</i></a>
+                        </volist>
                     </div>
                 </div>
+            </div>'>
+            <div class="media clearfix">
+                <div class="media-left">
+                    <img src="__ROOT__{$value['face']}" alt="" class="media-boject img-circle">
+                </div>
+                <div class="media-body">
+                    <p class="margin_0">账号昵称：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
+                    <p class="margin_0">昨日奖金：<em>￥{$value['amountcount']}</em></p>
+                </div>
+
+                <switch name="k">
+                    <case value="1">
+                        <span class="backs_red">1</span>
+                    </case>
+                    <case value="2">
+                        <span class="backs_blue">2</span>
+                    </case>
+                    <case value="3">
+                        <span class="backs_yellow">3</span>
+                    </case>
+                    <default />
+                    <i class="am-fr winners_num">{$key}</i>
+                </switch>
+
+
+            </div>
+            </li>
+            </volist>
+            </ul>
+        </div>
+        <div class="ranking main_common_bor winning" style=" <empty name='userinfo'> height:204px  !important; <else /> height:150px !important; </empty> ">
+            <div class="title">
+                <h3 class="margin_0">中奖信息</h3>
+            </div>
+            <div class="ranking_scrooll_box" style="<empty name='userinfo'> height:172px  !important; <else /> height:115px !important; </empty>">
+                <ul class="ranking_list ranking_scroll">
+                    <volist name="list2" id="value">
+                        <li data-html="true" class="user_header" data-container="body" data-toggle="popover" data-placement="left" data-content='
+                            <div class="ceng"><div class="media"><div class="media-left">
+                            <img src="__ROOT__{$value[' face']}" alt="" class="media-boject img-circle">
+                            <p><?php echo str_replace_cn($value['username'], 1, 3); ?></p>
+            </div>
+            <div class="media-body">
+                <p class="margin_0">账号：<span><?php echo str_replace_cn($value['username'], 1, 3); ?></span></p>
+                <p class="margin_0">等级：<span>{$value['groupname']}</span></p>
+                <p class="margin_0">头衔：<span>{$value['touhan']}</span></p>
+                <p class="margin_0">累积中奖：<span>{$value['okamountcount']}</span></p>
+            </div>
+            <div class="media-footer">
+                <volist name="value['k3names']" offset="0" length="7" id="val">
+                    <a href="{:U('Game/k3')}?code={$val[name]}" class="color_res"><span style="color:#333;display: block;margin-top:4px;">{$val.title|substr=0,6}</span><i class="iconfont">&#xe607;</i></a>
+                </volist>
             </div>
         </div>
+    </div>'>
+    <div class="media">
+        <div class="media-left">
+            <img src="__ROOT__{$value['face']}" alt="" class="media-boject img-circle">
+        </div>
+        <div class="media-body">
+            <p class="margin_0"><?php echo str_replace_cn($value['username'], 1, 3); ?> <span>在{$value['k3name']}</span></p>
+            <p class="margin_0">喜中 <em>￥{$value['okamount']}</em></p>
+        </div>
+    </div>
+    </li>
+    </volist>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 
     <include file="Public/footer" />
@@ -328,7 +385,6 @@
             </div>
         </div>
     </if>
-
     <script type="text/javascript">
         $('.closeNotice').on('click', function() {
             $('.ggpop').hide();

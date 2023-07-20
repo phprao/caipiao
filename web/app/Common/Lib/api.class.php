@@ -1,16 +1,20 @@
 <?php
 //公共接口文件
 namespace Lib;
+
 use Think\Controller\HproseController;
-class api{
-    //private $fp;
+
+class api
+{
+	//private $fp;
 	//token验证
-	
+
 	//发送请求
 	// Clienturl 完整请求地址 ( 到方法 不包含http的网关 ) Home/Member/aaa
 	// apiparam  传递的参数（数组）
 	// apiparam  传递的参数（数组）
-	function sendHttpClient($Clienturl='',$apiparam=array()){
+	function sendHttpClient($Clienturl = '', $apiparam = array())
+	{
 		/*if(!is_file('./shouquan.php.lotterysoft')){
 			echo'授权文件不存在';exit;
 		}
@@ -30,24 +34,24 @@ class api{
 		$apiurl   = 'http://'.$_host.'/';
 		*/
 		$result = array();
-		if(strpos($Clienturl,'/')===false){
+		if (strpos($Clienturl, '/') === false) {
 			E('请求地址错误');
 		}
-		$_Clienturls = array_filter(explode('/',$Clienturl));
-		$_Clienturls = array_filter(explode('/',$Clienturl));
-		if(count($_Clienturls)!=3){
+		$_Clienturls = array_filter(explode('/', $Clienturl));
+		$_Clienturls = array_filter(explode('/', $Clienturl));
+		if (count($_Clienturls) != 3) {
 			E('请求地址格式为：模块/控制器/方法');
 		}
 		$_Clienturls_old = $_Clienturls;
 		unset($_Clienturls);
-		foreach($_Clienturls_old as $v){
+		foreach ($_Clienturls_old as $v) {
 			$_Clienturls[] = $v;
 		}
 		$apiaction = $_Clienturls[2];
-		if(substr($apiurl,-1)!='/'){
+		if (substr($apiurl, -1) != '/') {
 			$apiurl = $apiurl . '/';
 		}
-		$Clienturl = $apiurl . $_Clienturls[0].'/'.$_Clienturls[1];
+		$Clienturl = $apiurl . $_Clienturls[0] . '/' . $_Clienturls[1];
 		$apiaction = $_Clienturls[2];
 		//$apiparam['apitoten']  = $apitoten;
 		//$apiparam['server_ip']  = self::get_server_ip();
@@ -66,22 +70,23 @@ class api{
 				unset($result[$k]);
 			}
 		}*/
-		$_OBJ = A($_Clienturls[0].'/'.$_Clienturls[1]);
+		$_OBJ = A($_Clienturls[0] . '/' . $_Clienturls[1]);
 		$result = $_OBJ->$apiaction($apiparam);
-//		exit(dump($_OBJ));
+		//		exit(dump($_OBJ));
 		unset($result['server_ip']);
 		return $result;
 	}
-	protected function get_server_ip() { 
-		if (isset($_SERVER)) { 
-			if($_SERVER['SERVER_ADDR']) {
-				$server_ip = $_SERVER['SERVER_ADDR']; 
-			} else { 
-				$server_ip = $_SERVER['LOCAL_ADDR']; 
-			} 
-		} else { 
+	protected function get_server_ip()
+	{
+		if (isset($_SERVER)) {
+			if ($_SERVER['SERVER_ADDR']) {
+				$server_ip = $_SERVER['SERVER_ADDR'];
+			} else {
+				$server_ip = $_SERVER['LOCAL_ADDR'];
+			}
+		} else {
 			$server_ip = getenv('SERVER_ADDR');
-		} 
-		return $server_ip; 
+		}
+		return $server_ip;
 	}
 }

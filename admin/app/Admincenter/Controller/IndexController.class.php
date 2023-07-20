@@ -8,7 +8,7 @@ class IndexController extends CommonController
 	{
 		parent::__construct();
 	}
-	
+
 	function index()
 	{
 		$username = I('username');
@@ -212,7 +212,10 @@ class IndexController extends CommonController
 		} else {
 			$bankbindcount = 0;
 		}
-		if (GetVar('czaudioqxtime') > 0) M('recharge')->where(['state' => ['eq', 0], 'oddtime' => ['elt', $t - (GetVar('czaudioqxtime') * 60)]])->setField(['state' => '-1']);
-		echo json_encode(['sign' => true, 'message' => '获取成功', 'czcount' => $czcount ? $czcount : 0, 'tkcount' => $tkcount ? $tkcount : 0, 'bankbindcount' => $bankbindcount ? $bankbindcount : 0]);
+		if (GetVar('czaudioqxtime') > 0) {
+			M('recharge')->where(['state' => ['eq', 0], 'oddtime' => ['elt', $t - (GetVar('czaudioqxtime') * 60)]])->setField(['state' => '-1']);
+		}
+
+		echo json_encode(['sign' => true, 'message' => '获取成功', 'czcount' => intval($czcount), 'tkcount' => intval($tkcount), 'bankbindcount' => intval($bankbindcount)]);
 	}
 }

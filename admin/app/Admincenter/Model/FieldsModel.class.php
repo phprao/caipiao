@@ -1,37 +1,42 @@
 <?php
+
 namespace Admincenter\Model;
+
 use Think\Model;
-class FieldsModel extends BaseModel {
+
+class FieldsModel extends BaseModel
+{
 	protected $_validate = [
-		['title','require','模型名称必须！'],
-		['name','/^[0-9a-z]+$/i','字段名称格式错误！',0,'regex',1],
+		['title', 'require', '模型名称必须！'],
+		['name', '/^[0-9a-z]+$/i', '字段名称格式错误！', 0, 'regex', 1],
 	];
-	function fieldsadd($data=[]){
+	function fieldsadd($data = [])
+	{
 		$int = $this->data($data)->add();
-		if(!$int)return false;
-		$_name = C('DB_PREFIX').$data['tbname'];
+		if (!$int) return false;
+		$_name = C('DB_PREFIX') . $data['tbname'];
 		$tb_id = 'id';
-		$remark= $data['remark']?:$data['title'];
+		$remark = $data['remark'] ?: $data['title'];
 		$fieldtype = $data['fieldtype'];
-		$length = $data['length']>255?255:$data['length'];
+		$length = $data['length'] > 255 ? 255 : $data['length'];
 		$CHAR = '';
-		switch($fieldtype){
-			case'editor':
+		switch ($fieldtype) {
+			case 'editor':
 				$CHAR = "TEXT NOT NULL";
 				break;
-			case'map':
+			case 'map':
 				$CHAR = "TEXT NOT NULL";
 				break;
-			case'number':
-				$length2 = $length?:11;
+			case 'number':
+				$length2 = $length ?: 11;
 				$CHAR = "INT( {$length2} ) NOT NULL";
 				break;
-			case'datetime':
+			case 'datetime':
 				$CHAR = "INT( 10 ) NOT NULL";
 				break;
 			default:
-				$length3 = $length?:255;
-				$CHAR = "VARCHAR( {$length3} ) NOT NULL";	
+				$length3 = $length ?: 255;
+				$CHAR = "VARCHAR( {$length3} ) NOT NULL";
 				break;
 		}
 		$sql = "ALTER TABLE `{$_name}` ADD `{$data['name']}` {$CHAR} COMMENT '{$remark}'";
@@ -40,13 +45,14 @@ class FieldsModel extends BaseModel {
 		//dump($sql);exit;
 		return $int;
 	}
-	function deleteone($id){
-		if(!is_numeric($id) || !intval($id))return false;
+	function deleteone($id)
+	{
+		if (!is_numeric($id) || !intval($id)) return false;
 		$_pk = $this->getPk();
-		$fields= $this->where([ $_pk=>$id ])->field('tbname,name')->find();
-		$int = $this->where([ $_pk=>$id ])->delete();
-		if($int){
-			$_name = C('DB_PREFIX').$fields['tbname'];
+		$fields = $this->where([$_pk => $id])->field('tbname,name')->find();
+		$int = $this->where([$_pk => $id])->delete();
+		if ($int) {
+			$_name = C('DB_PREFIX') . $fields['tbname'];
 			$_fname = $fields['name'];
 			M()->execute("ALTER TABLE `{$_name}` DROP `{$_fname}` ");
 		}

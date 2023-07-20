@@ -1,17 +1,22 @@
 <?php
+
 namespace Admincenter\Model;
+
 use Think\Model;
-class AdminsessionModel extends BaseModel {
-	function sessionadd($userid,$sid){
-		if(!$userid || !is_numeric($userid)){
+
+class AdminsessionModel extends BaseModel
+{
+	function sessionadd($userid, $sid)
+	{
+		if (!$userid || !is_numeric($userid)) {
 			return false;
 		}
-		$sessioninfo = $this->where(['userid'=>$userid])->find();
+		$sessioninfo = $this->where(['userid' => $userid])->find();
 		$ip          = get_client_ip();
 		$sessiontime = NOW_TIME;
-		if($sessioninfo){
-			$int = $this->where(['userid'=>$userid])->setField(['sessionid'=>$sid,'ip'=>$ip,'time'=>$sessiontime]);
-		}else{
+		if ($sessioninfo) {
+			$int = $this->where(['userid' => $userid])->setField(['sessionid' => $sid, 'ip' => $ip, 'time' => $sessiontime]);
+		} else {
 			$memberinfo = D('Adminmember')->getadmininfo($userid);
 			$data = [
 				'userid'    => $userid,
@@ -24,11 +29,12 @@ class AdminsessionModel extends BaseModel {
 		}
 		return $int;
 	}
-	function getsessioninfo($userid){
-		if(!$userid || !is_numeric($userid)){
+	function getsessioninfo($userid)
+	{
+		if (!$userid || !is_numeric($userid)) {
 			return false;
 		}
-		$sessioninfo = $this->where(['userid'=>$userid])->find();
+		$sessioninfo = $this->where(['userid' => $userid])->find();
 		return $sessioninfo;
 	}
 }

@@ -1,6 +1,5 @@
 <?php
 return array(
-	'DEFAULT_FILTER'         =>  'trim,strip_tags,stripslashes',
 	'VIEW_PATH'              =>  './Template/payer/',
 	//'THEME_LIST'             =>  'default,resources',
 	//'DEFAULT_THEME'          =>  'resources',

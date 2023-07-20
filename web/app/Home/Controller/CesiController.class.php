@@ -1,6 +1,9 @@
 <?php
+
 namespace Home\Controller;
+
 use Think\Controller;
+
 class CesiController extends CommonController
 {
 
@@ -10,50 +13,37 @@ class CesiController extends CommonController
         parent::__construct();
     }
 
-
-
-
-
-    Public function index()
+    public function index()
     {
-      $this->display();
+        $this->display();
     }
 
-    function getArrSet($arrs,$_current_index=-1)
+    function getArrSet($arrs, $_current_index = -1)
     {
         static $_total_arr;
         static $_total_arr_index;
         static $_total_count;
         static $_temp_arr;
-        if($_current_index<0)
-        {
-            $_total_arr=array();
-            $_total_arr_index=0;
-            $_temp_arr=array();
-            $_total_count=count($arrs)-1;
-            $this->getArrSet($arrs,0);
-        }
-        else
-        {
-            foreach($arrs[$_current_index] as $v)
-            {
-                if($_current_index<$_total_count)
-                {
-                    $_temp_arr[$_current_index]=$v;
-                    $this->getArrSet($arrs,$_current_index+1);
-                }
-                else if($_current_index==$_total_count)
-                {
-                    $_temp_arr[$_current_index]=$v;
-                    $_total_arr[$_total_arr_index]=$_temp_arr;
+        if ($_current_index < 0) {
+            $_total_arr = array();
+            $_total_arr_index = 0;
+            $_temp_arr = array();
+            $_total_count = count($arrs) - 1;
+            $this->getArrSet($arrs, 0);
+        } else {
+            foreach ($arrs[$_current_index] as $v) {
+                if ($_current_index < $_total_count) {
+                    $_temp_arr[$_current_index] = $v;
+                    $this->getArrSet($arrs, $_current_index + 1);
+                } else if ($_current_index == $_total_count) {
+                    $_temp_arr[$_current_index] = $v;
+                    $_total_arr[$_total_arr_index] = $_temp_arr;
                     $_total_arr_index++;
                 }
-
             }
         }
         return $_total_arr;
     }
-
 
     // 阶乘
     protected function factorial($n)
@@ -62,7 +52,7 @@ class CesiController extends CommonController
     }
 
     // 排列数
-    protected function A($n,$m)
+    protected function A($n, $m)
     {
         return self::factorial($n) / self::factorial($n - $m);
     }
@@ -73,26 +63,24 @@ class CesiController extends CommonController
         return self::A($n, $m) / self::factorial($m);
     }
 
-
-    function combineArrUpdata($Number){
+    function combineArrUpdata($Number)
+    {
         $currNumber = $Number;
-        for( $i = 0; $i < count($currNumber); $i++){
-            for($j = 0; $j < count($currNumber[$i]); $j++){
-                if($i == 0){
+        for ($i = 0; $i < count($currNumber); $i++) {
+            for ($j = 0; $j < count($currNumber[$i]); $j++) {
+                if ($i == 0) {
                     $this->d_balls[$currNumber[$i][$j]] = $currNumber[$i][$j];
-                }else{
+                } else {
                     $this->t_balls[$currNumber[$i][$j]] = $currNumber[$i][$j];
                 }
             }
-            if($i == 0){
+            if ($i == 0) {
                 $this->d_count = count($currNumber[$i]);
-            }else{
+            } else {
                 $this->t_count = count($currNumber[$i]);
             }
         }
     }
-
-
 
     // 排列
     protected function arrangement($a, $m)
@@ -144,6 +132,4 @@ class CesiController extends CommonController
 
         return $r;
     }
-
-
 }

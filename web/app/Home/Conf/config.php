@@ -3,7 +3,6 @@ define('STYLE_PATH', './resources');
 
 return array(
 	//'URL_CASE_INSENSITIVE' => true,
-	'DEFAULT_FILTER'         =>  'trim,strip_tags,stripslashes',
 	'VIEW_PATH'              =>  './resources/',
 	//'THEME_LIST'             =>  'default,resources',
 	//'DEFAULT_THEME'          =>  'resources',

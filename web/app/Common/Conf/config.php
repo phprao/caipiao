@@ -2,11 +2,11 @@
 return [
 
 	'TMPL_TEMPLATE_SUFFIX'  =>  '.php',
-	'URL_PATHINFO_DEPR'     =>  '/',
+	'URL_PATHINFO_DEPR'     =>  '.',
 	'URL_HTML_SUFFIX'       =>  'do',
 	'TAGLIB_BEGIN'          =>  '<',  // 标签库标签开始标记
 	'TAGLIB_END'            =>  '>',  // 标签库标签结束标记
-	'DEFAULT_FILTER'        =>  'htmlspecialchars,trim',
+	'DEFAULT_FILTER'        =>  'htmlspecialchars,trim,strip_tags,stripslashes',
 	'DB_DEBUG'  			=>  false,
 
 	'MODULE_DENY_LIST' =>  ['Common', 'Runtime', 'Api'],

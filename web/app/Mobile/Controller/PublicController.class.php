@@ -18,7 +18,6 @@ class PublicController extends CommonController
     } else {
       $this->display();
     }
-
   }
 
   function register()
@@ -189,13 +188,13 @@ class PublicController extends CommonController
       $data['regip'] = $ip;
       $data['source'] = 'mobile版注册';
       $data['loginsource'] = 'mobile';
-     $data['rebate'] = GetVar('default_fandian');
-			if($linkinfo && $_POST['linkid']){
-				$data['source'] = '推广链接注册';
-				$data['linkid'] = $_POST['linkid'];
-				$data['rebate'] = $linkinfo['fandian'];
-				$data['proxy'] = (isset($linkinfo['proxy']) && in_array($linkinfo['proxy'],[1,0]))?intval($linkinfo['proxy']):0;
-			}
+      $data['rebate'] = GetVar('default_fandian');
+      if ($linkinfo && $_POST['linkid']) {
+        $data['source'] = '推广链接注册';
+        $data['linkid'] = $_POST['linkid'];
+        $data['rebate'] = $linkinfo['fandian'];
+        $data['proxy'] = (isset($linkinfo['proxy']) && in_array($linkinfo['proxy'], [1, 0])) ? intval($linkinfo['proxy']) : 0;
+      }
       $data['regtime'] = time();
       $apiparam = array();
       $apiparam['data'] = $data;
@@ -213,7 +212,7 @@ class PublicController extends CommonController
         }
         $this->ajaxReturn($Result);
         exit;
-//				$this->success('恭喜你!注册成功',U('Member/index'));
+        //				$this->success('恭喜你!注册成功',U('Member/index'));
       } else {
         $Result = [];
         $Result['sign'] = false;
@@ -339,7 +338,7 @@ class PublicController extends CommonController
       $newpas = sys_md5($pa);
       $editint = M('member')->where(['id' => $hasuser['id']])->setField(['password' => $newpas]);
       if ($editint) {
-//				cookie('setPawIsOk',1);
+        //				cookie('setPawIsOk',1);
         $this->success('密码重置成功', U('Public/login'));
         exit;
       } else {
@@ -382,7 +381,7 @@ class PublicController extends CommonController
       $return = [];
       $return['sign'] = false;
       $return['message'] = '请输入6-16位的登陆密码';
-//			echo jsonreturn($Result);exit;
+      //			echo jsonreturn($Result);exit;
       $this->ajaxReturn($return);
       exit;
     }
@@ -427,7 +426,6 @@ class PublicController extends CommonController
       exit;
     }
     exit;
-
   }
 
   function LoginOut()
@@ -446,5 +444,3 @@ class PublicController extends CommonController
     verify($imageW, $imageH, $fontSize);
   }
 }
-
-?>
