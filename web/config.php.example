@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'DB_HOST'               => '',
+    'DB_NAME'               => '',
+    'DB_USER'               => '',
+    'DB_PWD'                => '',
+    'DB_PREFIX'             => 'caipiao_',
+    'DB_PORT'               => '3306',
+];
