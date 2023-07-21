@@ -8,7 +8,7 @@ class CommonController extends Controller
 {
 	public function _initialize()
 	{
-		if ($_SESSION['userinfo']) {
+		if (isset($_SESSION['userinfo']) && $_SESSION['userinfo']) {
 			if (empty($_SESSION['userinfo']['groupid'])) {
 				changeusergroup($_SESSION['userinfo']['id']);
 			}
