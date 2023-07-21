@@ -33,6 +33,7 @@ class api
 		//网关地址
 		$apiurl   = 'http://'.$_host.'/';
 		*/
+		$apiurl = '';
 		$result = array();
 		if (strpos($Clienturl, '/') === false) {
 			E('请求地址错误');

@@ -129,7 +129,7 @@
     line-height: 26px;
     vertical-align: top;
     display: inline-block;
-    box-sizing: border-box;">{$gglist[title]}</marquee>
+    box-sizing: border-box;">{$gglist['title']}</marquee>
         </div>
         <div class="am-fr">
             <i class="iconfont icon-arrowright"></i>
@@ -140,52 +140,52 @@
 <ul class="home_main am-avg-sm-3">
         <volist name="cplist" id="cp">
         <li class="home_main_list">
-            <switch name="cp[typeid]">
+            <switch name="cp['typeid']">
                 <case value="k3">
-                    <a href="{:U('Mobile/Game/k3',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/k3',array('code'=>$cp['name']))}">
                         <i class="iconfont icon-fucaikuai3"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="lhc">
-                    <a href="{:U('Mobile/Game/lhc',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/lhc',array('code'=>$cp['name']))}">
                         <i class="iconfont" style="color:#07b39e">&#xe65a;</i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="ssc">
-                    <a href="{:U('Mobile/Game/ssc',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/ssc',array('code'=>$cp['name']))}">
                         <!--<i class="iconfont icon--shishicai" style="color:#fa7e00;"></i>-->
                         <i class="iconfont icon--shishicai" style="color:#fa7e00;"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="pk10">
-                    <a href="/Game.pk10?code={$cp[name]}">
+                    <a href="/Game.pk10?code={$cp['name']}">
                         <!--<i class="iconfont icon--pk" style="color:#f22751;"></i>-->
                         <i class="iconfont icon--pk" style="color:#f22751;"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="keno">
-                    <a href="{:U('Mobile/Game/keno',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/keno',array('code'=>$cp['name']))}">
                         <!--<i class="iconfont icon-kuaile8" style="color:#fc5826;"></i>-->
                         <i class="iconfont icon-kuaile8" style="color:#fc5826;"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="x5">
-                    <a href="{:U('Mobile/Game/x5',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/x5',array('code'=>$cp['name']))}">
                         <!--<i class="iconfont icon-11xuan5" style="color:#218ddd;"></i>-->
                         <i class="iconfont icon-11xuan5" style="color:#218ddd;"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
                 <case value="dpc">
-                    <a href="{:U('Mobile/Game/dpc',array('code'=>$cp[name]))}">
+                    <a href="{:U('Mobile/Game/dpc',array('code'=>$cp['name']))}">
                         <i class="iconfont <?php if(strstr($cp['name'],'3d')){echo 'icon-fucai3d fc3d_c';}else{echo ' icon-pailie3 pl3_c';}?>"></i>
-                        <h3>{$cp[title]}</h3>
-                        <em>{$cp[ftitle]|msubstr='0','6','utf-8',''}</em>
+                        <h3>{$cp['title']}</h3>
+                        <em>{$cp['ftitle']|msubstr='0','6','utf-8',''}</em>
                 </case>
             </switch>
             </a>
