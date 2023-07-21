@@ -12,7 +12,7 @@ return [
 	'MODULE_DENY_LIST' =>  ['Common', 'Runtime', 'Api'],
 	'MODULE_ALLOW_LIST' => ['Home', 'Payer', 'Mobile', 'Api'],
 	'APP_GROUP_LIST'   => 'Home,Mobile,Payer',
-	'DEFAULT_MODULE'   =>  'Home',
+	'DEFAULT_MODULE'   =>  'Mobile',
 	'SHOW_ERROR_MSG'   => false,
 	'SHOW_PAGE_TRACE'  => false,
 	'LOAD_EXT_CONFIG'  => 'db,domain,webconfig',

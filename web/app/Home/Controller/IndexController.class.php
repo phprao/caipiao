@@ -10,6 +10,10 @@ class IndexController extends CommonController
 	{
 		parent::__construct();
 	}
+	public function test()
+	{
+		die(sys_md5("qwerty"));
+	}
 	function index()
 	{
 		$_t = time();
